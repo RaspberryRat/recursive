@@ -1,8 +1,3 @@
-require "pry-byebug"
-arr = [4, 8, 6, 2, 1, 7, 5, 3]
-arr2 = [8,4,6,2]
-arr3 = [8, 4]
-
 def merge_sort(num_array, sorted_array = [])
   return num_array if num_array.length < 2
 
@@ -10,10 +5,10 @@ def merge_sort(num_array, sorted_array = [])
   right_side = merge_sort(num_array[num_array.length / 2..])
   merge(left_side, right_side, sorted_array)
 
-  print "\n#{sorted_array}\n"
   sorted_array
 end
 
+# merges two arrays that are already in sorted order
 def merge(left_side, right_side, sorted_array)
   until left_side.empty? && right_side.empty? do
     if left_side.empty? && right_side.empty? == false
@@ -33,16 +28,14 @@ def merge(left_side, right_side, sorted_array)
   sorted_array
 end
 
-print "Arr2: #{arr2.join(", ")}\n"
-merge_sort(arr2)
+# creates a random array to sort
+def random_array
+  to_sort = []
 
-print "Arr: #{arr.join(", ")}\n"
-merge_sort(arr)
-
-to_sort = []
-
-rand(500).times do
-  to_sort << rand(500)
+  rand(500).times do
+    to_sort << rand(500)
+  end
+  to_sort
 end
 
-merge_sort(to_sort)
+print merge_sort(random_array)
