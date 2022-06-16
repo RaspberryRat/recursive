@@ -1,3 +1,4 @@
+require "pry-byebug"
 arr = [4, 8, 6, 2, 1, 7, 5, 3]
 arr2 = [8,4,6,2]
 arr3 = [8, 4]
@@ -23,6 +24,8 @@ def merge(left_side, right_side, sorted_array)
       sorted_array.push(left_side.shift)
     elsif left_side[0] > right_side[0]
       sorted_array.push(right_side.shift)
+    elsif left_side[0] == right_side[0]
+      sorted_array.push(left_side.shift, right_side.shift)
     else
       puts "ERROR ERROR"
     end
@@ -35,3 +38,11 @@ merge_sort(arr2)
 
 print "Arr: #{arr.join(", ")}\n"
 merge_sort(arr)
+
+to_sort = []
+
+rand(500).times do
+  to_sort << rand(500)
+end
+
+merge_sort(to_sort)
