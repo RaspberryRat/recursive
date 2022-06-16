@@ -8,10 +8,10 @@ end
 
 # merges two arrays that are already in sorted order
 def merge(left_side, right_side, sorted_array = [])
-  until left_side.empty?|| right_side.empty? do
+  until left_side.empty? || right_side.empty? do
     if left_side[0] < right_side[0]
       sorted_array << left_side.shift
-    elsif
+    else
       sorted_array << right_side.shift
     end
   end
