@@ -32,8 +32,8 @@ end
 def random_array
   to_sort = []
 
-  rand(500).times do
-    to_sort << rand(500)
+  rand(100).times do
+    to_sort << rand(100)
   end
   to_sort
 end
